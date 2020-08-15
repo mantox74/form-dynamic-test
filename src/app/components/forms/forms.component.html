@@ -1,0 +1,30 @@
+<h1>Forms components</h1>
+<form #testForm=ngForm autocomplete="off" (submit)="onSubmit(testForm)">
+
+  <mat-grid-list cols="2" gutterSize="15px" rowHeight="90px">
+
+    <mat-grid-tile>
+
+      <mat-form-field appearance="outline" >
+        <mat-label>Email</mat-label>
+        <input matInput required name="email" type="text" value="" placeholder="Inserisci la tua email"
+           ngModel #email>
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error>Campo obbligatorio</mat-error>
+      </mat-form-field>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      <p>Altro componente</p>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="2">
+      <button type="submit" [disabled]="!testForm.form.valid">
+        Salva
+      </button>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</form>

@@ -375,37 +375,7 @@
   </div>
 
 </div> -->
-
-<form #testForm=ngForm autocomplete="off">
-
-<mat-grid-list cols="4" gutterSize="15px" rowHeight="2:1">
-
-  <mat-grid-tile>
-
-      <mat-form-field >
-        <input
-        matInput
-        required
-        name="email"
-        type="text"
-        value=""
-        placeholder="Inserisci la tua email"
-        formControlName="email"
-        ngModel
-        #nome>
-        <mat-label>Email</mat-label>
-        <mat-error>Campo obbligatorio</mat-error>
-      </mat-form-field>
-
-  </mat-grid-tile>
-
-  <mat-grid-tile [colspan]="4">
-    <button type="submit" [disabled]="!testForm.form.valid">
-      Salva
-    </button>
-  </mat-grid-tile>
-</mat-grid-list>
-
-
-
-</form>
+<div class="spinner__container">
+  <mat-spinner class="spinner" color="warn" *ngIf="spinnerLoading"></mat-spinner>
+  </div>
+<app-forms></app-forms>
