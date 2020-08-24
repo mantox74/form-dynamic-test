@@ -11,8 +11,12 @@ import { MatGridListModule } from "@angular/material/grid-list";
 import { FormsComponent } from "./components/forms/forms.component";
 import { MatIconModule } from "@angular/material/icon";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { SpinnerComponent } from "./components/spinner/spinner.component";
+import { MatButtonModule } from "@angular/material/button";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+
 @NgModule({
-  declarations: [AppComponent, FormsComponent],
+  declarations: [AppComponent, FormsComponent, SpinnerComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -24,6 +28,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     MatGridListModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    MatButtonModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

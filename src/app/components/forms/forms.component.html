@@ -5,22 +5,31 @@
 
     <mat-grid-tile>
 
-      <mat-form-field appearance="outline" >
+      <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput required name="email" type="text" value="" placeholder="Inserisci la tua email"
-           ngModel #email>
-        <mat-icon matSuffix>email</mat-icon>
+        <input matInput required name="email" type="email" value="" placeholder="Inserisci la tua email" ngModel #email>
+        <mat-icon color="primary" matSuffix>email</mat-icon>
         <mat-error>Campo obbligatorio</mat-error>
       </mat-form-field>
 
     </mat-grid-tile>
 
     <mat-grid-tile>
-      <p>Altro componente</p>
+      <mat-form-field appearance="outline">
+        <mat-label>Autocomplete</mat-label>
+        <input type="text" name="autocomplete" value="" required placeholder="Scegli" aria-label="String" matInput
+          [matAutocomplete]="auto" #autocomplete>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]="2">
-      <button type="submit" [disabled]="!testForm.form.valid">
+      <button mat-flat-button type="submit" [disabled]="!testForm.form.valid" color="primary">
         Salva
       </button>
     </mat-grid-tile>
