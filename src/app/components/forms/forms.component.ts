@@ -20,6 +20,13 @@ export class FormsComponent implements OnInit {
     return !!this.jsonConfig && !!this.jsonConfig.title?.length;
   }
 
+  /**
+   * get title
+   */
+  get title(): string {
+    return !!this.jsonConfig && this.jsonConfig.title;
+  }
+
   options: string[] = ["Uno", "Due", "Tre"];
   filteredOptions: Observable<string[]>;
   constructor() {}
