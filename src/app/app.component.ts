@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { jsonConfigForm } from "src/jsonConfigForm";
+import { JsonConfig } from "./interfaces/json-config";
 
 @Component({
   selector: "app-root",
@@ -6,7 +8,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
+  /**
+   * json config object
+   */
+  public jsonConfig: JsonConfig;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.jsonConfig = jsonConfigForm;
+  }
 }

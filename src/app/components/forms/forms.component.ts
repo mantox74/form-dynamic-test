@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormControl } from "@angular/forms";
+import { Component, Input, OnInit, ViewChild } from "@angular/core";
 import { Observable } from "rxjs";
-import { map, startWith } from "rxjs/operators";
+import { JsonConfig } from "src/app/interfaces/json-config";
 
 @Component({
   selector: "app-forms",
@@ -10,18 +9,22 @@ import { map, startWith } from "rxjs/operators";
 })
 export class FormsComponent implements OnInit {
   @ViewChild("autocomplete", { static: true }) autocomplete: HTMLSelectElement;
+  /**
+   * file json for configure the form
+   */
+  @Input() jsonConfig: JsonConfig;
+  /**
+   * check if title exist and then if show it in html
+   */
+  get showTitle(): boolean {
+    return !!this.jsonConfig && !!this.jsonConfig.title?.length;
+  }
 
   options: string[] = ["Uno", "Due", "Tre"];
   filteredOptions: Observable<string[]>;
   constructor() {}
 
-  ngOnInit() {
-    //this.filteredOptions = this.autocomplete.
-    // .pipe(
-    //   startWith(""),
-    //   map((value) => this._filter(value))
-    // );
-  }
+  ngOnInit() {}
 
   filters(event) {
     console.log(event);
