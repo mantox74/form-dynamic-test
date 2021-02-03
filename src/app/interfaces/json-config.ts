@@ -1,6 +1,7 @@
 export interface JsonConfig {
   title?: string;
   fields?: Array<FieldConfig>;
+  className?: string;
 }
 
 interface FieldConfig {

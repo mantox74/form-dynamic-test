@@ -24,7 +24,20 @@ export class FormsComponent implements OnInit {
    * get title
    */
   get title(): string {
-    return !!this.jsonConfig && this.jsonConfig.title;
+    return (
+      !!this.jsonConfig && !!this.jsonConfig.title && this.jsonConfig.title
+    );
+  }
+
+  /**
+   * get class form cointainer
+   */
+  get formClass(): string {
+    return (
+      !!this.jsonConfig &&
+      !!this.jsonConfig.className &&
+      this.jsonConfig.className
+    );
   }
 
   options: string[] = ["Uno", "Due", "Tre"];

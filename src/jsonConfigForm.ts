@@ -1,5 +1,6 @@
 export const jsonConfigForm = {
   title: "Dynamic form test",
+  className: "d-form",
   fields: [
     {
       name: "Email",
