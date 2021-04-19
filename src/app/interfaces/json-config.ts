@@ -1,10 +1,12 @@
+import { ValidatorFn } from "@angular/forms";
+
 export interface JsonConfig {
   title?: string;
   fields?: Array<FieldConfig>;
   className?: string;
 }
 
-interface FieldConfig {
+export interface FieldConfig {
   name: string;
   type: string;
   options?: Array<OptionsConfig>;

@@ -1,4 +1,4 @@
-<div class="{{ formClass }}">
+<div class="{{ formClass || 'd-form' }}">
   <h1 *ngIf="showTitle">{{ title }}</h1>
   <form #testForm="ngForm" autocomplete="off" (submit)="onSubmit(testForm)">
     <mat-grid-list cols="2" gutterSize="15px" rowHeight="90px">

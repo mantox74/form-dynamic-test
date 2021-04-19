@@ -5,7 +5,7 @@ export const jsonConfigForm = {
     {
       name: "Email",
       type: "email",
-      validators: ["required", "minLength(5)"],
+      validators: ["Validator.required", "Validator.minLength(5)"],
       customValidator: [],
       className: "d-form__email",
       value: "info@prova.it",
